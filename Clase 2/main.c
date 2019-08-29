@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 void saludar();
+int pedirDatos();
 void mostrar(float respuesta);
 float promediar(int sumaAPromediar, int cantidadDeElementos);
 float sumar(int numero1, int numero2);
@@ -12,12 +13,15 @@ int main()
 {
     float promedio;
     int valor;
+    int numeroUno;
+    int numeroDos;
+    int operacion;
+    numeroUno=pedirDatos();
+    numeroDos=pedirDatos();
+    operacion=pedirDatos();
     saludar();
     valor=sumar(33,77);
-    calcular(3, 7, 1);
-    calcular(10,2,4);
-    calcular(2,3,3);
-    calcular(1,1,2);
+    calcular(numeroUno, numeroDos, operacion);
     promedio = promediar(22,3);
     printf("suma %d\n %f", valor, promedio);
     return 0;
@@ -71,4 +75,11 @@ float promediar(int sumaAPromediar, int cantidadDeElementos)
 void mostrar(float respuesta)
 {
     printf("\n %f \n", respuesta);
+}
+int pedirDatos()
+{
+    int numero;
+    printf("Ingrese un numero\n");
+    scanf("%d", &numero);
+    return numero;
 }
