@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define TAM 4
-void showArray(int arrayEdades[],char arrayNombres[], int cantidad);
-void showMax(int arrayEdades[],char arrayNombres[], int cantidad);
+void showArray(int arrayEdades[],char arrayNombres[][50], int cantidad);
+void showMax(int arrayEdades[],char arrayNombres[][50], int cantidad);
 int getIdMax(int arrayEdades[], int cantidad);
 int obtainMax(int array[], int cantidad);
 void hardcode(int array[], int cantidad);
@@ -27,7 +27,7 @@ int main()
         }*/
             //strcpy(nombres[i], nombre);
         //printf("la menor edad es %d y su nombre es %s",menorEdad, nombreDelMenor);
-        //showArray(edades,nombres,TAM);
+        showArray(edades,nombres,TAM);
         showMax(edades,nombres,TAM);
     return 0;
 }
@@ -48,24 +48,12 @@ void cargarCadenas(char array[][50], int cantidad)
             strcpy(array[i],nombresHardcode[i]);
         }
 }
-void showArray(int arrayEdades[],char arrayNombres[], int cantidad)
+void showArray(int arrayEdades[],char arrayNombres[][50], int cantidad)
 {
     for (int i=0;i<TAM;i++)
         {
             printf("su nombre es %s y su edad es %d\n", arrayNombres[i], arrayEdades[i]);
         }
-}
-int getIdMax(int arrayEdades[], int cantidad)
-{
-    int indice;
-    int mayor;
-    mayor = obtainMax(arrayEdades, cantidad);
-    for(int i=0;i<cantidad;i++)
-    {
-        if(arrayEdades[i]==mayor);
-        indice=i;
-    }
-    return indice;
 }
 int obtainMax(int array[], int cantidad)
 {
@@ -79,11 +67,25 @@ int obtainMax(int array[], int cantidad)
         }
         return mayor;
 }
-void showMax(int arrayEdades[],char arrayNombres[], int cantidad)
+int getIdMax(int arrayEdades[], int cantidad)
+{
+    int indice=0;
+    int mayor;
+    mayor = obtainMax(arrayEdades, cantidad);
+    for(int i=0;i<cantidad;i++)
+    {
+        if(arrayEdades[i]==mayor)
+            {
+                indice=i;
+            }
+    }
+    return indice;
+}
+void showMax(int arrayEdades[],char arrayNombres[][50], int cantidad)
 {
     int indice;
     indice=getIdMax(arrayEdades,cantidad);
-    printf("la nota mayor es %d y el nombre es %s", arrayEdades[indice], arrayNombres[indice]);
+    printf("la nota mayor es %d  y el nombre %s", arrayEdades[indice], arrayNombres[indice]);
 }
 
 
