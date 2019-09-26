@@ -27,9 +27,10 @@ typedef struct
 }eVehiculo;
 
 void hardcode(ePersona persona[], int cantidad);
-void showData(ePersona persona[], int cantidad);
+void showUsers(ePersona persona[], int cantidad);
 void hardcodeVehiculo(eVehiculo vehiculo[], int cantidad);
-void showVehiculo(eVehiculo vehiculo[], int cantidad);
+void showVehiculo(eVehiculo vehiculo[],ePersona persona[], int cantidad);
+void obtainIndexUser(ePersona persona[], int cantidad, int id);
 
 int main()
 {
@@ -37,7 +38,8 @@ int main()
     ePersona cliente[TAM];
     hardcode(cliente, TAM);
     showData(cliente,TAM);
-    showVehiculo(vehiculo,TAM);
+    hardcodeVehiculo(vehiculo,TAM);
+    showVehiculo(vehiculo,cliente,TAM);
     return 0;
 }
 void hardcode(ePersona persona[], int cantidad)
@@ -86,15 +88,30 @@ void hardcodeVehiculo(eVehiculo vehiculo[], int cantidad)
             vehiculo[i].idDuenio = idDuenio[i];
         }
 }
-void showVehiculo(eVehiculo vehiculo[], int cantidad)
+void showVehiculo(eVehiculo vehiculo[] ,ePersona persona[], int cantidad)
 {
-    for(int i=0; i<TAM;i++)
+    int idDelDueño=0;
+    for(int i=0; i<cantidad;i++)
             {
                 printf("ID vehicular:%d\n", vehiculo[i].id);
-                printf("Su ID del dueño:%d\n", vehiculo[i].idDuenio);
+                idDelDueño=vehiculo[i].idDuenio;
+                obtainIndexUser(persona, cantidad, idDelDueño);
                 printf("patente :%s\n", vehiculo[i].patente);
                 printf("Fecha de ingreso %d  %d  %d\n", vehiculo[i].fechaDeIngreso.dia, vehiculo[i].fechaDeIngreso.mes, vehiculo[i].fechaDeIngreso.anio);
                 printf("hora ingreso :%d\n", vehiculo[i].horaIngreso);
                 printf("hora salida :%d\n", vehiculo[i].horaSalida);
             }
 }
+void obtainIndexUser(ePersona persona[], int cantidad, int id)
+{
+    for(int i=0;i<cantidad;i++)
+        {
+            if(persona[i].id == id)
+                {
+                printf("Su ID:%d\n", persona[i].id);
+                printf("Nombre :%s\n", persona[i].nombre);
+                printf("Fecha de nacimiento %d  %d  %d\n", persona[i].fechaDeNac.dia, persona[i].fechaDeNac.mes, persona[i].fechaDeNac.anio);
+                }
+        }
+}
+
