@@ -42,6 +42,11 @@ int main()
                     system("cls");
                 break;
                 case 3:
+                    sortByDNI(alumno,TAM);
+                    system("pause");
+                    system("cls");
+                break;
+                case 4:
                     continuar='n';
                 break;
             }
@@ -123,7 +128,8 @@ void menu()
     printf("Que desea hacer ??\n");
     printf("1-- Agregar datos\n");
     printf("2-- mostrar todos\n");
-    printf("3-- salir\n");
+    printf("3-- Ordenar por DNI\n");
+    printf("4-- salir\n");
 }
 
 int validarDNI(ePersona alumno[], int auxDni, int cantidad)
@@ -139,5 +145,21 @@ int validarDNI(ePersona alumno[], int auxDni, int cantidad)
             }
             return value;
 }
-void sortByDNI(ePersona alumno[], int cantidad){}
+void sortByDNI(ePersona alumno[], int cantidad)
+{
+    ePersona auxiliar;
+    for(int i=0;i<cantidad-1;i++)
+        {
+            for(int j=i+1;j<cantidad;j++)
+                {
+                    if(alumno[i].dni>alumno[j].dni)
+                        {
+                            auxiliar = alumno[i];
+                            alumno[i] = alumno[j];
+                            alumno[j] = auxiliar;
+                        }
+                }
+        }
+        showArrayStruct(alumno,cantidad);
+}
 
