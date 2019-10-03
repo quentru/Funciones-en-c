@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569549653 source:c:\users\usuario\funciones-en-c\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

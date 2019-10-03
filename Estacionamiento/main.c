@@ -90,15 +90,15 @@ void hardcodeVehiculo(eVehiculo vehiculo[], int cantidad)
 }
 void showVehiculo(eVehiculo vehiculo[] ,ePersona persona[], int cantidad)
 {
-    int idDelDueño=0;
+    int idDelDuenio=0;
     for(int i=0; i<cantidad;i++)
             {
-                printf("ID vehicular:%d\n", vehiculo[i].id);
-                idDelDueño=vehiculo[i].idDuenio;
-                obtainIndexUser(persona, cantidad, idDelDueño);
-                printf("patente :%s\n", vehiculo[i].patente);
-                printf("Fecha de ingreso %d  %d  %d\n", vehiculo[i].fechaDeIngreso.dia, vehiculo[i].fechaDeIngreso.mes, vehiculo[i].fechaDeIngreso.anio);
-                printf("hora ingreso :%d\n", vehiculo[i].horaIngreso);
+                printf("ID vehicular:%d\t", vehiculo[i].id);
+                idDelDuenio=vehiculo[i].idDuenio;
+                obtainIndexUser(persona, cantidad, idDelDuenio);
+                printf("patente :%s\t", vehiculo[i].patente);
+                printf("Fecha de ingreso %d  %d  %d\t", vehiculo[i].fechaDeIngreso.dia, vehiculo[i].fechaDeIngreso.mes, vehiculo[i].fechaDeIngreso.anio);
+                printf("hora ingreso :%d\t", vehiculo[i].horaIngreso);
                 printf("hora salida :%d\n", vehiculo[i].horaSalida);
             }
 }
@@ -108,9 +108,9 @@ void obtainIndexUser(ePersona persona[], int cantidad, int id)
         {
             if(persona[i].id == id)
                 {
-                printf("Su ID:%d\n", persona[i].id);
-                printf("Nombre :%s\n", persona[i].nombre);
-                printf("Fecha de nacimiento %d  %d  %d\n", persona[i].fechaDeNac.dia, persona[i].fechaDeNac.mes, persona[i].fechaDeNac.anio);
+                printf("\n\n Su ID:%d \t ", persona[i].id);
+                printf("Nombre :%s \n ", persona[i].nombre);
+                printf("Fecha de nacimiento %d  %d  %d\t", persona[i].fechaDeNac.dia, persona[i].fechaDeNac.mes, persona[i].fechaDeNac.anio);
                 }
         }
 }
