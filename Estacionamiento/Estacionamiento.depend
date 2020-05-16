@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1569549653 source:c:\users\usuario\funciones-en-c\estacionamiento\main.c
+1570227568 source:c:\users\usuario\funciones-en-c\estacionamiento\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -8,4 +8,54 @@
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+
+1570649458 source:g:\funciones-en-c\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1582387714 source:e:\funciones-en-c\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1582834366 source:c:\users\usuario\desktop\funciones-en-c\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Propietario.h"
+	"Vehiculos.h"
+
+1582834145 c:\users\usuario\desktop\funciones-en-c\estacionamiento\propietario.h
+	"Fecha.h"
+
+1587061023 source:c:\users\usuario\desktop\funciones-en-c\estacionamiento\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Propietario.h"
+	"Input/inc/input.h"
+	"Fecha.h"
+
+1582834145 c:\users\usuario\desktop\funciones-en-c\estacionamiento\vehiculos.h
+	"Fecha.h"
+	"Propietario.h"
+
+1582833842 source:c:\users\usuario\desktop\funciones-en-c\estacionamiento\vehiculos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Vehiculos.h"
+
+1582834145 c:\users\usuario\desktop\funciones-en-c\estacionamiento\fecha.h
+
+1582834386 source:c:\users\usuario\desktop\funciones-en-c\estacionamiento\funcionesdehardcode.c
+
+1587038909 source:c:\users\usuario\desktop\funciones-en-c\estacionamiento\input\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1585840005 c:\users\usuario\desktop\funciones-en-c\estacionamiento\input\inc\input.h
 
